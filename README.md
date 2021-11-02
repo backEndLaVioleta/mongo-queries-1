@@ -258,6 +258,9 @@ Value | Order | Example
 Practice the following queries:
 
 - Find the restaurant with id `30112340`.
+```
+db.getCollection('restaurants_list').find({"restaurant_id": "30112340"});
+```
 - Find `May May Kitchen`.
 - Find the restaurants where their cuisine is `Tapas`.
 - Find the restaurants in postal code `11208`.
