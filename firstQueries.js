@@ -23,9 +23,13 @@ db.getCollection('restaurants_list').find({$or: [
                                                  {"cuisine": "Chilean"},
                                                  {"cuisine": "Czech"}   
                                                     ]}).pretty();
-db.getCollection('restaurants_list').find({"grades.grade.1": "B"}).pretty();// to be review it
-db.getCollection('restaurants_list').aggregate([ { $project : { grades : 1} } ])
+db.getCollection('restaurants_list').find({"grades.1.grade": "B"}).pretty();
+// to access positions we must use dots and no []
+
+db.getCollection('restaurants_list').aggregate([ { $project : { grades : 1} } ]);
+
 db.getCollection('restaurants_list').find({$and: [
                                                  {"grades.grade": "Z"},
                                                  {"grades.grade": "B"}   
                                                     ]}).pretty();
+db.restaurats.find({})
